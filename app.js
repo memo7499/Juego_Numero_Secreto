@@ -27,14 +27,14 @@ function verificarIntento() {
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
         
     if (numeroDeUsuario === numeroSecreto) {
-        asignarTextoElemento('p',`¡Has acertado el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}!`)
+        asignarTextoElemento('p',`¡Has acertado el número en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}!`)
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else {
         //el usuario no acertó.
         if (numeroDeUsuario>numeroSecreto) {
-        asignarTextoElemento('p','El número secreto es menor')
+        asignarTextoElemento('p',`El número secreto es menor a ${intentos}`)
         } else{
-        asignarTextoElemento('p','El número secreto es mayor')
+        asignarTextoElemento('p',`El número secreto es mayor a ${intentos}`)
         }
         intentos++;
         limpiarCaja();
@@ -84,4 +84,5 @@ function reiniciarJuego() {
 }
 
 condicionesIniciales();
+
 
